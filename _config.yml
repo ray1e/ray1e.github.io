@@ -13,7 +13,7 @@
 # you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
-title: MM
+title: Collins Kimani Portfolio
 email: heycollins001@gmail.com
 description: >- # this means to ignore newlines until "baseurl:"
   Write an awesome description for your new site here. You can edit this
@@ -60,7 +60,7 @@ plugins:
 author:
   name   : "Collins Kimani"
   avatar : "/assets/images/profile photo.jfif"
-  bio    : "My awesome biography constrained to a sentence or two goes here."
+  bio    : "I'm a final-year Computer Science student at Riara University, specialising in Cybersecurity. Passionate about digital safety, I focus on hands-on security skills, OSINT investigations, and ethical hacking. Whether it's decoding malicious payloads, tracing digital footprints, or building solutions that matter, I'm all about practical impact in cybersecurity"
   links:
     - label: "linkedin"
       icon: "fab fa-fw fa-linkedin-in"
@@ -83,9 +83,9 @@ footer:
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
       url: "https://github.com/"
-    - label: "Instagram"
-      icon: "fab fa-fw fa-instagram"
-      url: "https://instagram.com/"
+   # - label: "Instagram"
+   #   icon: "fab fa-fw fa-instagram"
+   #   url: "https://instagram.com/"
 
 defaults:
   # _posts
