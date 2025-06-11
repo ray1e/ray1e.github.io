@@ -4,7 +4,7 @@ main:
     url: /assets/images/my_cv.pdf
   - title: "OSINT BLOGS"
     url: /OSINT BLOGS/
-  - title: "LAB REPORTS"
-    url: /LAB REPORTS/
-  - title: "About"
+  - title: "WALKTHROUGHS"
+    url: /WALKTHROUGHS/
+  - title: "ABOUT"
     url: /about/
