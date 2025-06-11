@@ -2,7 +2,7 @@
 title: "Geolocating Earthquakes and CCTVS"
 # excerpt_separator: "<!--more-->"
 categories:
-  - OSINT BLOGS
+  - Blog
 tags:
   - Post Formats
   - readability
