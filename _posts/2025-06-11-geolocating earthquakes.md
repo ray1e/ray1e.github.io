@@ -9,7 +9,7 @@ tags:
   - standard
 image: /assets/images/earthquake.jfif
 image: 
-  path: /assets/images/osint-cover.jpg
+  path: /assets/images/earthquake.jfif
   alt: "OSINT tools displayed on a screen"
   caption: "Cover for OSINT Journey Post"
 
