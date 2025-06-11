@@ -1,6 +1,6 @@
 main:
   - title: "RESUME"
-    url: /RESUME/
+    url: assets/images/my_cv.pdf
   - title: "OSINT BLOGS"
     url: /OSINT BLOGS/
   - title: "LAB REPORTS"
