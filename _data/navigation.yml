@@ -1,9 +1,9 @@
 main:
-  - title: "Posts"
-    url: /posts/
-  - title: "Categories"
-    url: /categories/
-  - title: "Tags"
-    url: /tags/
+  - title: "RESUME"
+    url: /RESUME/
+  - title: "OSINT BLOGS"
+    url: /OSINT BLOGS/
+  - title: "LAB REPORTS"
+    url: /LAB REPORTS/
   - title: "About"
     url: /about/
