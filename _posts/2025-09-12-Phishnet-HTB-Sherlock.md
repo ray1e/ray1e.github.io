@@ -20,7 +20,14 @@ The sherlock has a zip file that contains the email. Download it and extract it.
 
 To read the email open it using outlook. The email is about an overdue payment for an invoice, and it contains an attachment tahat contains the invoice(likely malicious files). 
 
-[![phishing-email.png](https://i.postimg.cc/5Np0K2n1/phishing-email.png)](https://postimg.cc/qzh4z0PZ)
 
 ![Phishing-email-2.png](/assets/phishing-email.png)
 
+In order to start analyzing the email there are a few headers that will be of importance to us.  
+*Sending address:* The email address of the sender. Can be spoofed.  
+*subject line*: The subject of the email (suspicious emails usually have an urgent sounding subject)  
+*Recipients(unless they are in BCC)*: In an organization it is important to know who else received the email unless its a blind carbon copy where we can't see the other recipients then we have to look at logs in the mail server.  
+*Date + time*: Date and time when the email was sent  
+*sending server IP(x-sender IP):* IP address of the sender. It is also important to note that this might be absent depending on the email client you use, due to privacy reasons.  
+*reply to address*: where to send replies to the email. This header can be spoofed and may be different from the sending address.  
+*Full URL*: Any link that might be included in the email - usually phishing links or download links.  
