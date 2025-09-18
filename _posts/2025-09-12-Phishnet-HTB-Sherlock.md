@@ -1,5 +1,5 @@
 ---
-title: PhishNet HTB Sherlock
+title: PhishNet HTB-Sherlock
 date: 2025-09-12 20:36:58 +0300
 categories: [HTB, sherlock]
 tags: [sherlock, phishing]     # TAG names should always be lowercase
@@ -16,19 +16,27 @@ An accounting team receives an urgent payment request from a known vendor. The e
 ## Downloading files
 The sherlock has a zip file that contains the email. Download and extract it.
 To read the email open it using outlook. The email is about an overdue payment for an invoice, and it contains an attachment that contains the invoice(likely malicious files).
-![[phishing email.png]]
+
+![phishing email.png](/assets/phishing-email.png)
 
 In order to start analyzing the email there are a few headers that will be of importance to us.
+
 *Sending address:* The email address of the sender. Can be spoofed.
+
 *subject line*: The subject of the email (suspicious emails usually have an urgent sounding subject)
+
 *Recipients(unless they are in BCC)*: In an organization it is important to know who else received the email unless its a blind carbon copy where we can't see the other recipients then we have to look at logs in the mail server.
+
 *Date + time*: Date and time when the email was sent
+
 *sending server IP(x-sender IP):* IP address of the sender. It is also important to note that this might be absent depending on the email client you use, due to privacy reasons.
+
 *reply to address*: where to send replies to the email. This header can be spoofed and may be different from the sending address.
+
 *Full URL*: Any link that might be included in the email - usually phishing links or download links.
 
 ## How does email spoofing work?
-Before we look at the raw email headers it is essential to understand how spoofing takes place. Basically what happens when a user sends an email using an email client,  the *From* header e.g. john.doe@domain.com is pre-filled for you by the email client. However it is possible to change the address to something like finance@amazon.com using basic scripts, if proper security measures are not implemented by the sender. This is because when you send an email, the email is routed to the outgoing mail server in your domain which uses SMTP (Simple Mail Transfer Protocol) to route the email to the specified domain's recipient mail server. Typically, IMAP or POP3 protocols are  used to retrieve the email into the email client. The outgoing mail server does not  authenticate the *Ftom* header by default. To prevent spoofing, SPF, DMARC and DKIM are utilized.
+Before we look at the raw email headers it is essential to understand how spoofing takes place. Basically what happens when a user sends an email using an email client,  the *From* header e.g. john.doe@domain.com is pre-filled for you by the email client. However it is possible to change the address to something like finance@amazon.com using basic scripts, if proper security measures are not implemented by the sender. This is because when you send an email, the email is routed to the outgoing mail server in your domain which uses SMTP (Simple Mail Transfer Protocol) to route the email to the specified domain's recipient mail server. Typically, IMAP or POP3 protocols are  used to retrieve the email into the email client. The outgoing mail server does not  authenticate the *From* header by default. To prevent spoofing, SPF, DMARC and DKIM are utilized.
 
 ## Inspect the raw email headers
 Now that we have an idea of what we will be looking for, let's dive into it analyzing the headers. To do this, you can use several methods.
@@ -47,7 +55,7 @@ This method is however not the best since you can't do searches and the view is 
 ### Using notepad++
 Another option(the one I prefer) would be to use [notepad++.](https://notepad-plus-plus.org/downloads/) You can download it for free and then right click on your email and select edit it with notepad++. This is the tool we will be using for this walkthrough.
 ### Using mxtoolbox
-Alternatively, you could copy the email headers and analyze them using a tool known as [mxtoolbox.](https://mxtoolbox.com/EmailHeaders.aspx)
+Alternatively, you could copy the email headers and analyze them using [mxtoolbox.](https://mxtoolbox.com/EmailHeaders.aspx)
 
 ## Tasks
 ### Task 1
