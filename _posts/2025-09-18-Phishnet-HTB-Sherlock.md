@@ -148,7 +148,7 @@ lets list the files in our zip attachment.
 ![malicious file.png](/assets/malicious-file.png)
 
 **invoice_document.pdf.bat**
-### Task 12
+### Task 11
 **Which MITRE ATT&CK techniques are associated with this attack?**
 This is a phishing attack with a malicious attachment.
 link to MITRE attack technique: https://attack.mitre.org/techniques/T1566/001
