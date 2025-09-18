@@ -1,11 +1,10 @@
 ---
 title: PhishNet HTB-Sherlock
-date: 2025-09-12 20:36:58 +0300
+date: 2025-09-18 20:40:00 +0300
 categories: [HTB, sherlock]
 tags: [sherlock, phishing]     # TAG names should always be lowercase
 ---
 
-# PhishNet - HTB Sherlock Walkthrough
 
 In this walkthrough I will take you through the process of how I solved the Phishnet sherlock in Hack The Box.  
 
