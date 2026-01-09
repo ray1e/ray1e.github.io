@@ -1,6 +1,5 @@
 backend:
-  name: github
-  repo: ray1e/ray1e.github.io
+  name: git-gateway
   branch: main
 
 # Media (images)
