@@ -1,6 +1,7 @@
 backend:
   name: git-gateway
   branch: main
+  use_external_providers: true
 
 # Media (images)
 media_folder: "assets/img/uploads"
