@@ -1,0 +1,27 @@
+backend:
+  name: github
+  repo: ray1e/ray1e.github.io
+  branch: main
+
+# Media (images)
+media_folder: "assets/img/uploads"
+public_folder: "/assets/img/uploads"
+
+# Editorial workflow (drafts + publish)
+publish_mode: editorial_workflow
+
+collections:
+  - name: "posts"
+    label: "Blog Posts"
+    folder: "_posts"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    extension: "md"
+    format: "frontmatter"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Description", name: "description", widget: "string", required: false }
+      - { label: "Date", name: "date", widget: "datetime" }
+      - { label: "Categories", name: "categories", widget: "list", required: false }
+      - { label: "Tags", name: "tags", widget: "list", required: false }
+      - { label: "Body", name: "body", widget: "markdown" }
