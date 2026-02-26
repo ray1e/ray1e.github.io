@@ -1,27 +1,34 @@
 backend:
-  name: git-gateway
+  name: github
+  repo: ray1e/ray1e.github.io
   branch: main
-  use_external_providers: true
+  site_domain: ray1e.github.io
+  base_url: https://api.sveltia.org
 
-# Media (images)
-media_folder: "assets/img/uploads"
-public_folder: "/assets/img/uploads"
+# Chirpy-specific media paths
+media_folder: "assets/img/posts"
+public_folder: "/assets/img/posts"
 
-# Editorial workflow (drafts + publish)
-publish_mode: editorial_workflow
+# Fixes your "one-by-one" upload issue and adds Search
+media_library:
+  name: sveltia
+  config:
+    multiple: true
+    sortable: true
+    searchable: true
 
 collections:
   - name: "posts"
-    label: "Blog Posts"
+    label: "Cybersecurity Blog Posts"
     folder: "_posts"
     create: true
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
-    extension: "md"
-    format: "frontmatter"
     fields:
+      - { label: "Layout", name: "layout", widget: "hidden", default: "post" }
       - { label: "Title", name: "title", widget: "string" }
-      - { label: "Description", name: "description", widget: "string", required: false }
       - { label: "Date", name: "date", widget: "datetime" }
-      - { label: "Categories", name: "categories", widget: "list", required: false }
-      - { label: "Tags", name: "tags", widget: "list", required: false }
+      - { label: "Description", name: "description", widget: "text" }
+      - { label: "Featured Image", name: "image", widget: "image", required: false }
+      - { label: "Category", name: "categories", widget: "list" }
+      - { label: "Tags", name: "tags", widget: "list" }
       - { label: "Body", name: "body", widget: "markdown" }
