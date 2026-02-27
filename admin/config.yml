@@ -11,6 +11,7 @@ collections:
   - name: "posts"
     label: "Cybersecurity Posts"
     folder: "_posts"
+    preview_path: "posts/{{slug}}"
     create: true
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
     fields:
