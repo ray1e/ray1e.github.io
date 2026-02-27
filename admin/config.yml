@@ -2,33 +2,50 @@ backend:
   name: github
   repo: ray1e/ray1e.github.io
   branch: main
-  site_domain: ray1e.github.io
-  base_url: https://api.sveltia.org
-  # This enables the "Save as Draft" / "Publish" buttons
-  publish_mode: editorial_workflow 
+  base_url: https://api.sveltia.org # We still use this as the login bridge for Decap
+  publish_mode: editorial_workflow # This enables the "Save as Draft" UI
 
-# Chirpy-specific media paths
 media_folder: "assets/img/posts"
 public_folder: "/assets/img/posts"
 
-media_library:
-  name: sveltia
-  config:
-    multiple: true
-    sortable: true
-    searchable: true
-
 collections:
   - name: "posts"
-    label: "Cybersecurity Blog Posts"
+    label: "Cybersecurity Posts"
     folder: "_posts"
     create: true
-    # Important: This tells the CMS how to handle the workflow status
-    publish: true 
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
     fields:
       - { label: "Layout", name: "layout", widget: "hidden", default: "post" }
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Difficulty", name: "difficulty", widget: "select", options: ["Easy", "Medium", "Hard", "Insane"], default: "Easy" }
+      - { label: "Image", name: "image", widget: "image", required: false }
+      - { label: "Author", name: "author", widget: "relation", 
+          collection: "authors", value_field: "username", 
+          search_fields: ["title", "username"], 
+          display_fields: ["title"] }
       - { label: "Date", name: "date", widget: "datetime" }
+      - { label: "Description", name: "description", widget: "text", required: false }
+      - { label: "Categories", name: "categories", widget: "list" }
+      - { label: "Tags", name: "tags", widget: "list", required: false }
       - { label: "Body", name: "body", widget: "markdown" }
+
+  - name: "authors"
+    label: "Authors"
+    folder: "_authors"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Display Name", name: "title", widget: "string" }
+      - { label: "Username", name: "username", widget: "string" }
+      - { label: "Avatar", name: "image", widget: "image" }
+      - { label: "Bio", name: "body", widget: "markdown" }
+
+  - name: "pages"
+    label: "Pages"
+    files:
+      - name: "about"
+        label: "About Page"
+        file: "about.md"
+        fields:
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Content", name: "body", widget: "markdown" }
