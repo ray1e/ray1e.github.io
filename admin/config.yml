@@ -1,10 +1,7 @@
 backend:
-  name: github
-  repo: ray1e/ray1e.github.io
+  name: git-gateway
   branch: main
-  # Updated base_url for Decap compatibility
-  base_url: https://api.sveltia.org
-  auth_endpoint: auth
+  use_external_providers: true
   publish_mode: editorial_workflow
 
 media_folder: "assets/img/posts"
