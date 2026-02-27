@@ -4,7 +4,7 @@ backend:
   branch: main
   site_domain: ray1e.github.io
   base_url: https://api.sveltia.org
-  # This enables the "Save as Draft" behavior
+  # This enables the "Save as Draft" / "Publish" buttons
   publish_mode: editorial_workflow 
 
 # Chirpy-specific media paths
@@ -23,21 +23,12 @@ collections:
     label: "Cybersecurity Blog Posts"
     folder: "_posts"
     create: true
+    # Important: This tells the CMS how to handle the workflow status
+    publish: true 
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
     fields:
       - { label: "Layout", name: "layout", widget: "hidden", default: "post" }
       - { label: "Title", name: "title", widget: "string" }
-      
-      # Added Difficulty Badge
-      - label: "Difficulty"
-        name: "difficulty"
-        widget: "select"
-        options: ["Easy", "Medium", "Hard", "Insane"]
-        default: "Easy"
-      
+      - { label: "Difficulty", name: "difficulty", widget: "select", options: ["Easy", "Medium", "Hard", "Insane"], default: "Easy" }
       - { label: "Date", name: "date", widget: "datetime" }
-      - { label: "Description", name: "description", widget: "text" }
-      - { label: "Featured Image", name: "image", widget: "image", required: false }
-      - { label: "Category", name: "categories", widget: "list" }
-      - { label: "Tags", name: "tags", widget: "list" }
       - { label: "Body", name: "body", widget: "markdown" }
