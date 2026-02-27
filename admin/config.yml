@@ -2,8 +2,10 @@ backend:
   name: github
   repo: ray1e/ray1e.github.io
   branch: main
-  base_url: https://api.sveltia.org # We still use this as the login bridge for Decap
-  publish_mode: editorial_workflow # This enables the "Save as Draft" UI
+  # Updated base_url for Decap compatibility
+  base_url: https://api.sveltia.org
+  auth_endpoint: auth
+  publish_mode: editorial_workflow
 
 media_folder: "assets/img/posts"
 public_folder: "/assets/img/posts"
