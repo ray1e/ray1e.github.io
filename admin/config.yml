@@ -1,6 +1,8 @@
 backend:
   name: git-gateway
   branch: main
+  site_domain: ray1e-cms.netlify.app
+  site_url: https://ray1e.github.io
   use_external_providers: true
 
 publish_mode: editorial_workflow
