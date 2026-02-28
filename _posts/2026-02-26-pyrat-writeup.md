@@ -1,7 +1,9 @@
 ---
 title: Pyrat writeup
-description: A walkthrough of TryHackMe's boot-to-root Pyrat room.
+difficulty: Easy
+author: 0xray1e
 date: 2026-02-26T15:52:00.000+03:00
+description: A walkthrough of TryHackMe's boot-to-root Pyrat room.
 categories:
   - Boot to Root
   - TryHackMe
@@ -45,4 +47,4 @@ Listened on port 4444 on my machine.
 
 `nc -nvlp 4444`
 
-After gaining access as
+After gaining access asxxx
