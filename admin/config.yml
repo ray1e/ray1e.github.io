@@ -20,7 +20,6 @@ collections:
     fields:
       - { label: "Layout", name: "layout", widget: "hidden", default: "post" }
       - { label: "Title", name: "title", widget: "string" }
-      - { label: "Author", name: "author", widget: "string", default: "0xray1e" }
       - { label: "Image", name: "image", widget: "image", required: false }
       - { label: "Date", name: "date", widget: "datetime" }
       - { label: "Description", name: "description", widget: "text", required: false }
