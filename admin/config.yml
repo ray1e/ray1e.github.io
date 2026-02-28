@@ -1,8 +1,7 @@
 backend:
   name: git-gateway
   branch: main
-  site_domain: ray1e-cms.netlify.app
-  site_url: https://ray1e.github.io
+  site_domain: ray1e.netlify.app
   use_external_providers: true
 
 publish_mode: editorial_workflow
@@ -15,7 +14,7 @@ collections:
     label: "Cybersecurity Posts"
     folder: "_posts"
     publish: true
-    preview_path: "posts/{{slug}}/"
+    preview_path: "posts/{{title | slugify}}/"
     create: true
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
     fields:
