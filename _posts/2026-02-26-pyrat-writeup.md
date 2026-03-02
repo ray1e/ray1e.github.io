@@ -51,6 +51,8 @@ Once the shell is spawned and after some exploring, I found myself in the `var` 
 
 ![email conten](/assets/img/uploads/Pasted image 20260221182446.png "email content")
 
+## User Access
+
 The email is from `root`user to `think` referring to a RAT installed from think's github page. I decided to check whether there was a .git folder in the system. This lead me to `/opt/dev/.git`. A .git folder stores everything needed to keep track of changes made to a project. This includes, config file which contains email aliases, name, authentication credentials, a log of all the commits made, git objects (a hash key pointing to a commit), etc.
 
 `/opt/dev/.git/config` file has Think's credentials, which I used to login and obtain user flag.
@@ -65,6 +67,6 @@ Get user.txt
 
 Now that I had permissions, I was curious to know what was in the git project. This is where the [git objects](https://git-scm.com/book/en/v2/Git-Internals-Git-Objects.html) come in handy. An object is basically a hashed key which points to a commit. This objects can be found in the objects folder where the full object is the fodler name as the key inside it. For example, in this case the full object key is `0a3c36d66369fd4b07ddca72e5379461a63470bf`. 
 
-![]()
+![objects folder](/assets/img/uploads/git objects folder.png "objects folder")
 
-x
+![object key](/assets/img/uploads/object key.png "object key")
