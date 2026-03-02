@@ -2,7 +2,7 @@
 title: Pyrat writeup
 difficulty: Easy
 author: 0xray1e
-date: 2026-03-02T17:19:00.000+03:00
+date: 2026-03-02T17:28:00.000+03:00
 description: A walkthrough of TryHackMe's boot-to-root Pyrat room.
 categories:
   - Boot to Root
@@ -19,19 +19,25 @@ Pyrat receives a curious response from an HTTP server, which leads to a potent
 
 First, I started with an nmap scan.
 
-`nmap -Pn -T4 10.67.166.0`
+```
+nmap -Pn -T4 10.67.166.0
+```
 
 ![TCP ports nmap scan](/assets/img/uploads/Pasted image 20260221151604.png "TCP ports nmap scan")
 
 This returned port 22 used for ssh and port 8000 for HTTP. I ran a script on the http port to get more information on what was running there.
 
-`nmap -sC -sV -p8000 10.67.166.0`
+```
+nmap -sC -sV -p8000 10.67.166.0
+```
 
 ![port 8000 nmap scan](/assets/img/uploads/Pasted image 20260221151729.png "port 8000 nmap scan")
 
 The above response showed that this is a Python server. I started a netcat connection to access the server.
 
-`nc 10.67.175.146 8000`
+```
+nc 10.67.175.146 8000
+```
 
 ## Initial Acess
 
@@ -277,11 +283,15 @@ if __name__ == "__main__":
 
 ```
 
+
+
 ![pass_fuzzer.py](/assets/img/uploads/Pasted image 20260224154650.png "pass_fuzzer.py")
 
 This got me the password.
 
 `abc123`
+
+## Root Access
 
 Log in and get the root flag.
 
