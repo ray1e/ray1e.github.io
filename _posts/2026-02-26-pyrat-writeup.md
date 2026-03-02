@@ -1,13 +1,14 @@
 ---
 title: Pyrat writeup
-difficulty: Easy
 author: 0xray1e
+image: /assets/img/uploads/pyrat image.png
 date: 2026-03-02T17:31:00.000+03:00
+tags: []
+difficulty: Easy
 description: A walkthrough of TryHackMe's boot-to-root Pyrat room.
 categories:
   - Boot to Root
   - TryHackMe
-tags: []
 ---
 ## Room Description
 
