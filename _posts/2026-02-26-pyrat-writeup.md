@@ -2,7 +2,7 @@
 title: Pyrat writeup
 difficulty: Easy
 author: 0xray1e
-date: 2026-03-02T17:28:00.000+03:00
+date: 2026-03-02T17:31:00.000+03:00
 description: A walkthrough of TryHackMe's boot-to-root Pyrat room.
 categories:
   - Boot to Root
