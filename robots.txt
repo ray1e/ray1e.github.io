@@ -1,9 +1,0 @@
----
-layout: none
----
-User-agent: *
-Allow: /
-Disallow: /admin/
-Disallow: /tabs/
-
-Sitemap: https://ray1e.github.io/sitemap.xml
