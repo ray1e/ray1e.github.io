@@ -20,7 +20,9 @@ author: 0xray1e
 tagline: I post blogs and stuff # it will display as the subtitle
 
 description: >- # used by seo meta and the atom feed
-  blogs, ray1e, github, cybersecurity
+  Cybersecurity researcher and OSINT enthusiast. Exploring digital 
+  footprints, security research, and open-source intelligence. 
+  Follow ray1e's latest projects and technical blogs.
 
 # Fill in the protocol & hostname for your site.
 # E.g. 'https://username.github.io', note that it does not end with a '/'.
@@ -47,7 +49,7 @@ social:
 
 # Site Verification Settings
 webmaster_verifications:
-  google: # fill in your Google verification code
+  google: 1NJeviVYib1T3fu-5bXEMQ5ajYzF0rIaNwyN-njCgZY
   bing: # fill in your Bing verification code
   alexa: # fill in your Alexa verification code
   yandex: # fill in your Yandex verification code
@@ -60,7 +62,7 @@ webmaster_verifications:
 # Web Analytics Settings
 analytics:
   google:
-    id: # fill in your Google Analytics ID
+    id: G-JDE2C8Q0FF
   goatcounter:
     id: # fill in your GoatCounter ID
   umami:
@@ -89,7 +91,7 @@ pageviews:
 #     light — Use the light color scheme
 #     dark — Use the dark color scheme
 #
-theme_mode: # [light | dark]
+theme_mode: dark
 
 # The CDN endpoint for media resources.
 # Notice that once it is assigned, the CDN url
