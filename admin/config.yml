@@ -28,11 +28,15 @@ collections:
       - { label: "Tags", name: "tags", widget: "list", required: false }
       - { label: "Body", name: "body", widget: "markdown" }
 
-  - name: "about"
-    label: "About Page"
-    file: "_tabs/about.md"
-    fields:
-              - { label: "Title", name: "title", widget: "string" }
-              - { label: "Icon", name: "icon", widget: "string", default: "fas fa-info-circle" }
-              - { label: "Order", name: "order", widget: "number", default: 4 }
-              - { label: "Body", name: "body", widget: "markdown" }
+  - name: "tabs"
+    label: "Navigation Tabs"
+    files: # This tells Decap it's a specific set of files, not a folder
+      - label: "About Page"
+        name: "about"
+        file: "_tabs/about.md" # The exact path Chirpy expects
+        fields:
+          - { label: "Layout", name: "layout", widget: "hidden", default: "page" }
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Icon", name: "icon", widget: "string" }
+          - { label: "Order", name: "order", widget: "number" }
+          - { label: "Body", name: "body", widget: "markdown" }
