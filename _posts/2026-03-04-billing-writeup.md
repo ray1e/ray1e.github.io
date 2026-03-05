@@ -7,6 +7,8 @@ date: 2026-03-05T14:53:00.000+03:00
 description: A walkthrough of the Billing Room in TryHackMe.
 categories:
   - Boot-to-Root
+tags:
+  - TryHackMe
 ---
 [Billing room THM](https://tryhackme.com/room/billing)
 
