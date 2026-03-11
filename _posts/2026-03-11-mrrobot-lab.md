@@ -2,6 +2,7 @@
 layout: post
 title: MrRobot Lab
 author: 0xray1e
+image: /assets/img/uploads/Mr__Robot - banner.png
 date: 2026-03-11T17:19:00.000+03:00
 description: This is a walkthrough of Mr Robot digital forensics lab in
   cyberdefenders, as well as my own notes for later reference.
