@@ -16,7 +16,7 @@ tags:
 
 You are provided with some dumps that will be useful for solving the challenges. Download and unzip them.
 
-![]()
+![](/assets/img/uploads/mr robot - downloaded files.png)
 
 The files have `vmss` and `vmsd` extensions.
 
